@@ -13,6 +13,5 @@ public class CapsuleAI : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(Player.position);
-        
     }
 }

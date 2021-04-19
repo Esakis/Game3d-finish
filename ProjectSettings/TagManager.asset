@@ -9,6 +9,7 @@ TagManager:
   - Food
   - Rest
   - Weapon
+  - Skeleton
   layers:
   - Default
   - TransparentFX
