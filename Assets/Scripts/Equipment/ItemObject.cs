@@ -21,7 +21,7 @@ public class ItemObject : MonoBehaviour
 
     public GameObject CanPickUpInfo;
 
-    void Start()
+    void Awake()
     {
         GetObject();
         item = Database.ItemDataBase[ID];
@@ -95,7 +95,7 @@ public class ItemObject : MonoBehaviour
     void GetObject()
     {
         Database = GameObject.Find("ItemsData").GetComponent<ItemsDataBase>();
-        Player = GameObject.Find("Player").transform;
+        Player = GameObject.Find("Hero1").transform;
     }
 
     private void OnGUI()

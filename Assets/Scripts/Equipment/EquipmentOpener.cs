@@ -7,7 +7,7 @@ public class EquipmentOpener : MonoBehaviour
     public GameObject EquipmentUI;
     public GameObject[] AnotherObjets;
     public bool IsOpen;
-    void Start()
+    void Awake()
     {
         EquipmentUI.SetActive(false);
         

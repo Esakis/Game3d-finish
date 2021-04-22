@@ -8,7 +8,7 @@ public class SkeletonAI : MonoBehaviour
     public Transform Player;
     static Animator anim;
     public Slider healthbarAI;
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         

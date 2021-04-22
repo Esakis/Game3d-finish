@@ -43,7 +43,7 @@ public class detectHit : MonoBehaviour
     }
 
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         

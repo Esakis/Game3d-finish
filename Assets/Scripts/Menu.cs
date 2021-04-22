@@ -13,20 +13,20 @@ public class Menu : MonoBehaviour
     public Button btnSave;
     public Button btnLoad;
 
-    public Canvas hudMenu;
-    private Canvas manuUI;
+    public Canvas MainMenu;
+    public Canvas HeroStats;
 
     void Start()
     {
 
 
-        manuUI = (Canvas)GetComponent<Canvas>();
+        MainMenu = MainMenu.GetComponent<Canvas>();
         btnStart = btnStart.GetComponent<Button>();//Ustawienie przycisku uruchomienia gry.
         btnExit = btnExit.GetComponent<Button>();//Ustawienie przycisku wyjœcia z gry.
-        hudMenu = hudMenu.GetComponent<Canvas>();
-        hudMenu.enabled = false;
-        Cursor.visible = manuUI.enabled;
-        Cursor.lockState = CursorLockMode.Confined;
+        HeroStats = HeroStats.GetComponent<Canvas>();
+        HeroStats.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
 
     }
@@ -37,16 +37,15 @@ public class Menu : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
         { //Je¿eli naciœniêto klawisz "Escape"
-            manuUI.enabled = !manuUI.enabled;//Ukrycie/pokazanie menu.
-            hudMenu.enabled = !hudMenu.enabled;//Ukrycie/pokazanie interface.
+            MainMenu.enabled = !MainMenu.enabled;//Ukrycie/pokazanie menu.
+            HeroStats.enabled = !HeroStats.enabled;//Ukrycie/pokazanie interface.
 
-            Cursor.visible = manuUI.enabled;//Ukrycie pokazanie kursora myszy.
 
-            if (manuUI.enabled)
+            if (MainMenu.enabled)
             {
                 Cursor.lockState = CursorLockMode.Confined;//Odblokowanie kursora myszy.
                 Cursor.visible = true;//Pokazanie kursora.
-               
+                Time.timeScale = 0;
                 btnStart.enabled = true; //Aktywacja przycsiku 'Start'.
                 btnExit.enabled = true; //Aktywacja przycsiku 'Wyjœcie'.
             }
@@ -54,7 +53,8 @@ public class Menu : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.Locked; //Zablokowanie kursora myszy.
                 Cursor.visible = false;//Ukrycie kursora.
-             
+                Time.timeScale = 1;
+
 
             }
 
@@ -74,7 +74,7 @@ public class Menu : MonoBehaviour
     public void ButtonStart()
     {
         //Application.LoadLevel (0); //this will load our first level from our build settings. "1" is the second scene in our game	
-        manuUI.enabled = false; //Ukrycie g³ównego menu.
+        MainMenu.enabled = false; //Ukrycie g³ównego menu.
 
         Time.timeScale = 1;//W³aczenie czasu.
 

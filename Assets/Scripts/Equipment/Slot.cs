@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     public int ID;
     Image Icon;
     Item item;
-    void Start()
+    void Awake()
     {
         GetObjects();
         SetSlot();
