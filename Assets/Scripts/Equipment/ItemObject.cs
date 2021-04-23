@@ -95,7 +95,7 @@ public class ItemObject : MonoBehaviour
     void GetObject()
     {
         Database = GameObject.Find("ItemsData").GetComponent<ItemsDataBase>();
-        Player = GameObject.Find("Hero1").transform;
+        Player = GameObject.Find("Player").transform;
     }
 
     private void OnGUI()
