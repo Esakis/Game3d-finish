@@ -45,7 +45,7 @@ public class SaveLoad : MonoBehaviour
 
         PlayerData data = new PlayerData();
         data.nameScene = SceneManager.GetActiveScene().name; 
-        data.health = player.GetComponent<detectHit>().healtbar.value;
+        data.health = player.GetComponent<detecHitHero>().healtbar.value;
         data.position = new Vector3Serialization(player.GetComponent<Transform>().position);
         data.rotate = new QuaternionSerialization(player.GetComponent<Transform>().rotation);
         
@@ -78,7 +78,7 @@ public class SaveLoad : MonoBehaviour
       
             PlayerInstance.respown = false; 
             SceneManager.LoadScene(data.nameScene);          
-            player.GetComponent<detectHit>().healtbar.SetValueWithoutNotify(data.health);
+            player.GetComponent<detecHitHero>().healtbar.SetValueWithoutNotify(data.health);
             player.GetComponent<Transform>().position = data.position.getVector();
             player.GetComponent<Transform>().rotation = data.rotate.getQuaternion();
         }
