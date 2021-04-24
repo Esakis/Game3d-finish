@@ -8,8 +8,8 @@ public class ItemObject : MonoBehaviour
     ItemsDataBase Database;
     public EquipmentManager EM;
    
-    int goldCounter = 0;
-    int bottleCounter = 0;
+    public int goldCounter = 0;
+    public int bottleCounter = 0;
     public GUISkin skin;
 
     public int ID;
@@ -20,6 +20,8 @@ public class ItemObject : MonoBehaviour
     bool CanPickUp;
 
     public GameObject CanPickUpInfo;
+
+    public Slider FoodBar;
 
     void Awake()
     {
@@ -51,15 +53,22 @@ public class ItemObject : MonoBehaviour
                 else if (transform.gameObject.tag == "Food")
                 {
                     Destroy(transform.gameObject);
-
+                    FoodBar.value++;
                     bottleCounter++;
+                    
+
                     PlayerPrefs.SetInt("TextCounterBottle", bottleCounter);
                 }
 
-                else if (transform.gameObject.tag == "Rest")
+                else if (transform.gameObject.tag == "Key")
                 {
                     Destroy(transform.gameObject);
+                    Move.hasKey = true;
                  
+                }
+                else if (transform.gameObject.tag == "Rest")
+                {
+                    Destroy(transform.gameObject);          
                 }
 
             }

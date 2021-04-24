@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Move : MonoBehaviour
 {
     Rigidbody RB;
@@ -24,6 +25,8 @@ public class Move : MonoBehaviour
     public float MaxRotY = 40.0f;
 
     public bool IsGrounded;
+    public static bool hasKey = false;
+    
 
 
 
@@ -122,11 +125,13 @@ public class Move : MonoBehaviour
         {
             animator.SetFloat("Speed", 0.15f);
         }
+ 
         else
         {
             animator.SetFloat("Speed", 0f);
         }
 
     }
+   
 }
 

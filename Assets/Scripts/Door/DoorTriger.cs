@@ -42,7 +42,7 @@ public class DoorTriger : MonoBehaviour
 		Door d = (Door)DoorPivot.GetComponent<Door>();
 
 		
-		if (messageDoor.enabled == true && Input.GetKeyDown(KeyCode.E))
+		if (messageDoor.enabled == true && Input.GetKeyDown(KeyCode.E) && Move.hasKey == true)
 		{
 			Debug.Log("E");
 
@@ -58,6 +58,11 @@ public class DoorTriger : MonoBehaviour
 			}
 			SetState(d.OpenYes()); 
 		}
+
+		else if (messageDoor.enabled == true && Input.GetKeyDown(KeyCode.E) && Move.hasKey == false)
+        {
+			NoKey();
+        }
 
 	}
 
@@ -93,6 +98,13 @@ public class DoorTriger : MonoBehaviour
 				Open.text = "Press E to close";
 			}
 		}
+	}
+	private void NoKey()
+	{
+		
+		Open.text = "Find the key ";
+			
+		
 	}
 
 }

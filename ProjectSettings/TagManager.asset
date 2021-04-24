@@ -10,6 +10,7 @@ TagManager:
   - Rest
   - Weapon
   - Enemy
+  - Key
   layers:
   - Default
   - TransparentFX
